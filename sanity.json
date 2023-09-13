@@ -1,0 +1,13 @@
+{
+    "paths": {
+      "source": "./src",
+      "compiled": "./lib"
+    },
+    "parts": [
+      {
+        "name": "part:sanity-plugin-seo-tools/config",
+        "description": "Can be used to customize the plugin config"
+      }
+    ]
+  }
+  

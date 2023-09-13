@@ -1,0 +1,76 @@
+{
+  "name": "sanity-plugin-seo-tools-extended",
+  "version": "3.2.0",
+  "license": "GPL-3.0",
+  "main": "./lib/cjs",
+  "module": "./lib/esm",
+  "types": "./types",
+  "author": {
+    "name": "Liam Martens",
+    "email": "hi@liammartens.com",
+    "url": "https://liammartens.com"
+  },
+  "keywords": [
+    "sanity",
+    "cms",
+    "headless",
+    "realtime",
+    "content",
+    "sanity-plugin",
+    "seo",
+    "yoast"
+  ],
+  "files": [
+    "lib/",
+    "doc/",
+    "types/",
+    "sanity.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LiamMartens/sanity-plugin-seo-tools"
+  },
+  "bugs": {
+    "email": "hi@liammartens.com",
+    "url": "https://github.com/LiamMartens/sanity-plugin-seo-tools/issues"
+  },
+  "scripts": {
+    "build": "run-p build:*",
+    "build:types": "tsc -p .",
+    "build:esm": "swc ./src -s -d lib/esm -C module.type=es6",
+    "build:cjs": "swc ./src -s -d lib/cjs -C module.type=commonjs",
+    "watch": "run-p \"build:* -- -w\"",
+    "link-watch": "plugin-kit link-watch"
+  },
+  "devDependencies": {
+    "@sanity/check": "^2.0.9",
+    "@sanity/form-builder": "^2.35.7",
+    "@sanity/react-hooks": "^2.35.7",
+    "@sanity/ui": "^1.3.0",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.39",
+    "@types/react": "^18.0.28",
+    "@types/styled-components": "^5.1.26",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.2.0",
+    "styled-components": "^5.3.8",
+    "typescript": "^4.9.5",
+    "yoastseo": "^1.91.2"
+  },
+  "peerDependencies": {
+    "@sanity/form-builder": "^0.0.0",
+    "@sanity/react-hooks": "^2.0.0",
+    "@sanity/ui": "^0.0.0",
+    "react": "^16.0.0||^17.0.0||^17.0.0",
+    "styled-components": "^5.3.5",
+    "yoastseo": ">=1.0.0"
+  },
+  "dependencies": {
+    "@sanity/plugin-kit": "^3.1.10",
+    "jed": "^1.1.1",
+    "just-safe-get": "^4.2.0",
+    "react-serp-preview": "^1.1.0",
+    "string-pixel-width": "^1.11.0",
+    "swr": "^2.1.0"
+  }
+}
