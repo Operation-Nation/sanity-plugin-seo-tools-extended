@@ -1,5 +1,11 @@
 import { LangCultureMap } from "../constants";
 import type { PreparedData } from "../context";
+import { JSDOM } from "jsdom";
+
+// Set up a basic DOM environment using jsdom
+const { window } = new JSDOM();
+(global as any).window = window;
+(global as any)._document = window._document || window._document;
 
 type Options = {
   contentSelector?: string;
@@ -12,7 +18,7 @@ export async function prepareRemoteData(
   const contentSelector = options.contentSelector ?? "body";
   const result = await fetch(url.toString());
   const html = await result.text();
-  const parser = new DOMParser();
+  const parser = new window.DOMParser();
   const doc = parser.parseFromString(html, "text/html");
 
   // remove all script tags
@@ -41,12 +47,10 @@ export async function prepareRemoteData(
     "";
   const nodeList = doc.querySelectorAll(`[data-content="seo"]`);
   const createElement = doc.createElement("main");
-
   await Promise.all(
     Array.from(nodeList).map((n) => createElement.appendChild(n)),
   );
   const contentHtml = doc.querySelector(contentSelector)?.innerHTML || "";
-
   const mainElement = createElement?.innerHTML;
   const content = nodeList?.length ? mainElement : contentHtml;
 
