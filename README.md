@@ -24,7 +24,7 @@ _This is the documentation for v3_
 
 ### 1. Install the plugin
 
-This is simply done by running `npm install sanity-plugin-seo-tools-extended`.
+This is simply done by running `npm install @operationnation/sanity-plugin-seo-tools-extended`.
 
 ### 2. Add the pane
 
@@ -37,7 +37,7 @@ import React from "react";
 
 import S from "@sanity/desk-tool/structure-builder";
 
-import { SeoToolsPane } from "sanity-plugin-seo-tools";
+import { SeoToolsPane } from "@operationnation/sanity-plugin-seo-tools-extended";
 
 export const getDefaultDocumentNode = () => {
   return S.document().views([
