@@ -81,7 +81,7 @@
   "dependencies": {
     "@sanity/plugin-kit": "^3.1.10",
     "jed": "^1.1.1",
-    "jsdom": "^22.1.0",
+    "jest-environment-jsdom": "^29.7.0",
     "just-safe-get": "^4.2.0",
     "react-serp-preview": "^1.1.0",
     "string-pixel-width": "^1.11.0",

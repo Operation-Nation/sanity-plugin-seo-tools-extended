@@ -1,11 +1,5 @@
 import { LangCultureMap } from "../constants";
 import type { PreparedData } from "../context";
-import { JSDOM } from "jsdom";
-
-// Set up a basic DOM environment using jsdom
-const { window } = new JSDOM();
-(global as any).window = window;
-(global as any)._document = window._document || window._document;
 
 type Options = {
   contentSelector?: string;
@@ -18,7 +12,7 @@ export async function prepareRemoteData(
   const contentSelector = options.contentSelector ?? "body";
   const result = await fetch(url.toString());
   const html = await result.text();
-  const parser = new window.DOMParser();
+  const parser = new DOMParser();
   const doc = parser.parseFromString(html, "text/html");
 
   // remove all script tags

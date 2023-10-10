@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import { prepareRemoteData } from "../../src/utils/prepareRemoteData";
 
 describe("prepareRemoteData", () => {
