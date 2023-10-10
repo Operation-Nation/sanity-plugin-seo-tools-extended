@@ -149,15 +149,13 @@ S.view
 Lastly, you can select multiple elements from different sections of a webpage.
 
 ```js
-...
-	<div>
-		<h2 className=’blog-subtitle’ data-content="seo">
-         {post?.excerpt}
-	 	</h2>
-		<!--Start of the element we want to avoid -->
-		<ArticleSideBarSticky />
-		<!--End of the element we want to avoid -->
-        <Richtext postBody={post?.body} data-content="seo" />
-	 </div>
- ....
+<div>
+	<h2 className=’blog-subtitle’ data-content="seo">
+    {post?.excerpt}
+	</h2>
+	<!--Start of the element we want to avoid -->
+	<ArticleSideBarSticky />
+	<!--End of the element we want to avoid -->
+  <Richtext postBody={post?.body} data-content="seo" />
+</div>
 ```
