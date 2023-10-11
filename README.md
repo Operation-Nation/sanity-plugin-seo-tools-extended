@@ -2,13 +2,15 @@
 
 > This is an extended version from `sanity-plugin-seo-tools` plugin.
 
-## Why you need this plugin
+You can find the original here -> https://github.com/LiamMartens/sanity-plugin-seo-tools
 
-This plugin improves how you gather SEO-related content from a webpage. It solves the problem of only being able to pick content from one part of a page and the risk of getting unnecessary stuff. Here's what it does:
+## Benefits of our extended version
 
-1.  **Select Multiple Elements**: The plugin lets developers choose and study various parts of a webpage. They can identify these parts using the [data-content="seo"] tag.
-2.  **Combine Content**: Instead of taking content from just one place, the plugin puts together content from all areas marked with [data-content="seo"] into one main container.
-3.  **Backup Plan**: If there are no [data-content="seo"] elements, the plugin smartly goes back to using the original method for selecting content.
+The extended version of this plugin gives the developer more control and flexibility in what content and elements you want to analyze on a page for SEO. Rather than be limited to one block of content (which could include elments you don't want analyzed by the SEO plugin), this allows you to specifically target which blocks of content you want the Yoast plugin to analyze. Here's what it does:
+
+1.  **Select Multiple Elements**: The plugin lets developers choose and anazlye various parts of a webpage. They can select these elements using the [data-content="seo"] tag.
+2.  **Combine Content**: Instead of taking content from just one container, the plugin puts together content from all elements marked with [data-content="seo"] into one main container.
+3.  **Backup Plan**: If there are no [data-content="seo"] elements, the plugin intelligently goes back to using the original method for selecting content.
 
 By doing this, the plugin becomes more powerful and flexible for SEO content collection. It can handle different situations where you need to check multiple content sections for SEO purposes. Plus, it still works with pages that don't use the [data-content="seo"] tag.
 
@@ -105,7 +107,7 @@ S.view
       locale: doc.__i18n_lang ?? "en-US", // when using `fetch` this is extracted from the `lang` attribute of the root tag
 
       content: ReactDOMServer.renderToStaticMarkup(
-        <PortableText document={doc.content} />,
+        <PortableText document={doc.content} />
       ), // when using `fetch` this is extracted from `body`. This does not need to be an exact copy of your live website, but should match the semantic structure for proper analysis
     }),
   })
@@ -138,7 +140,7 @@ S.view
     render: (
       resultFromSelect,
       resultFromPrepare,
-      defaultSerpPreviewChildren,
+      defaultSerpPreviewChildren
     ) => <div>{defaultSerpPreviewChildren}</div>,
   })
   .title("SEO");
