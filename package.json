@@ -1,6 +1,6 @@
 {
   "name": "@operationnation/sanity-plugin-seo-tools-extended",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "license": "GPL-3.0",
   "main": "./lib/cjs",
   "module": "./lib/esm",
@@ -45,7 +45,8 @@
     "build:cjs": "swc ./src -s -d lib/cjs -C module.type=commonjs",
     "watch": "run-p \"build:* -- -w\"",
     "link-watch": "plugin-kit link-watch",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write --cache --ignore-unknown ."
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",

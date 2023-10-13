@@ -5,11 +5,11 @@ declare module '*.module.css' {
 }
 declare module 'react-serp-preview' {
   const SerpPreview: import('react').FC<{
-    title: string
-    metaDescription: string
-    url: string
-  }>
-  export default SerpPreview
+    title: string;
+    metaDescription: string;
+    url: string;
+  }>;
+  export default SerpPreview;
 }
 declare module 'yoastseo' {
   export class Paper {
@@ -125,30 +125,30 @@ declare module 'yoastseo' {
   }
 
   export type AssessmentResult = {
-    score: number
-    text :string
-  }
+    score: number;
+    text: string;
+  };
 
-  export type AssessmentCategory = import('./src/constants/AssessmentCategory').AssessmentCategory
-  export type AssessmentRating = 'error' | 'feedback' | 'bad' | 'ok' | 'good' | ''
+  export type AssessmentCategory = import('./src/constants/AssessmentCategory').AssessmentCategory;
+  export type AssessmentRating = 'error' | 'feedback' | 'bad' | 'ok' | 'good' | '';
   export class Assessment {
-    constructor(...args: any[])
-    getResult(paper: Paper, researcher: Researcher, i18n: import('jed')): AssessmentResult | null
+    constructor(...args: any[]);
+    getResult(paper: Paper, researcher: Researcher, i18n: import('jed')): AssessmentResult | null;
   }
 
   export const assessments: Record<
     AssessmentCategory,
     Record<string, Assessment | typeof Assessment>
-  >
+  >;
 
   export const helpers: {
-    scoreToRating(score: number): AssessmentRating
-  }
+    scoreToRating(score: number): AssessmentRating;
+  };
 }
 
 declare module 'yoastseo/src/config/content/default.js' {
-  const config: Record<string, any>
-  export default config
+  const config: Record<string, any>;
+  export default config;
 }
 
 declare module 'string-pixel-width' {
@@ -163,11 +163,6 @@ declare module 'string-pixel-width' {
 }
 declare module 'jed' {
   export default class Jed {
-    constructor(opts: {
-      domain: string
-      locale_data: Record<string, (
-        Record<string, unknown>
-      )>
-    })
+    constructor(opts: { domain: string; locale_data: Record<string, Record<string, unknown>> });
   }
 }

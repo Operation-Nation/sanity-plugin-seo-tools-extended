@@ -18,6 +18,6 @@
     "outDir": "./lib",
     "incremental": true
   },
-  "include": [".d.ts", "./src"],
+  "include": [".d.ts", "./src", "./.eslintrc.js"],
   "exclude": ["**/node_modules"]
 }
