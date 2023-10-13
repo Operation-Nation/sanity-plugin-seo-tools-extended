@@ -1,2 +1,2 @@
-export { LangCultureMap } from './LangCultureMap'
-export { AssessmentCategory } from './AssessmentCategory'
+export { LangCultureMap } from './LangCultureMap';
+export { AssessmentCategory } from './AssessmentCategory';

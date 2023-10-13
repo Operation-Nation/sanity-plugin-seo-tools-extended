@@ -1,1 +1,1 @@
-export * from './InvalidConfigurationError'
+export * from './InvalidConfigurationError';

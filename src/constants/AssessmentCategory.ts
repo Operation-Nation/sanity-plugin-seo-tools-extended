@@ -1,4 +1,4 @@
 export enum AssessmentCategory {
   SEO = 'seo',
-  READABILITY = 'readability',
+  READABILITY = 'readability'
 }
