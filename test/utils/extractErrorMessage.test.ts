@@ -28,7 +28,7 @@ describe("extractErrorMessage", () => {
 
   it("should handle custom error objects", () => {
     class CustomError extends Error {
-      constructor(message) {
+      constructor(message: string) {
         super(message);
         this.name = "CustomError";
       }
