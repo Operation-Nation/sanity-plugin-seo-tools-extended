@@ -1,2 +1,2 @@
-export { SeoToolsPane } from './components'
-export { SeoToolsContext, type SeoToolsContextValue } from './context'
+export { SeoToolsPane } from './components';
+export { SeoToolsContext, type SeoToolsContextValue } from './context';

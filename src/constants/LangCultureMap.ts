@@ -64,5 +64,5 @@ export const LangCultureMap = Object.freeze({
   uk: 'uk-UA',
   ur: 'ur-PK',
   uz: 'uz-Latn-UZ',
-  vi: 'vi-VN',
-})
+  vi: 'vi-VN'
+});

@@ -1,1 +1,1 @@
-export * from './SeoToolsPane'
+export * from './SeoToolsPane';
