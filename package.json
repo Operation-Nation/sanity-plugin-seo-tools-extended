@@ -1,6 +1,6 @@
 {
   "name": "@operationnation/sanity-plugin-seo-tools-extended",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "license": "MIT",
   "main": "./lib/cjs",
   "module": "./lib/esm",
