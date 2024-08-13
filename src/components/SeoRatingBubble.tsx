@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { Box } from '@sanity/ui';
-import type { AssessmentRating } from 'yoastseo';
+import type { AssessmentRating } from '../utils/yoastseoTypes';
 
 type Props = {
   rating: AssessmentRating;

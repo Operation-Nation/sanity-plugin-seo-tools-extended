@@ -16,7 +16,7 @@ jest.mock('yoastseo', () => {
 });
 
 describe('getYoastInsightsForContent', () => {
-  it('should return insights for SEO and READABILITY categories', () => {
+  it('should return insights for SEO and READABILITY categories', async () => {
     const html = '<p>This is some HTML content.</p>';
     const options = {
       keyword: 'example',
@@ -27,7 +27,7 @@ describe('getYoastInsightsForContent', () => {
       description: 'Example description',
       langCulture: 'en-US'
     };
-    const insights = getYoastInsightsForContent(require('yoastseo'), html, options);
+    const insights = await getYoastInsightsForContent(html, options);
     expect(insights).toHaveProperty('seo');
     expect(insights).toHaveProperty('readability');
     expect(insights.seo.length).toBeGreaterThanOrEqual(0);
