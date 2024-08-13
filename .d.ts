@@ -166,18 +166,3 @@ declare module 'jed' {
     constructor(opts: { domain: string; locale_data: Record<string, Record<string, unknown>> });
   }
 }
-
-declare module './src/components/SeoToolsPane' {
-  import type { PropsWithChildren, FC } from 'react';
-  import type { SeoToolsContextValue } from './src/context/SeoToolsContext';
-  import type { SanityDocument } from '@sanity/types';
-
-  type Props = PropsWithChildren<{
-    options?: Partial<SeoToolsContextValue>;
-    document?: {
-      displayed?: SanityDocument;
-    };
-  }>;
-
-  export const SeoToolsPane: FC<Props>;
-}
