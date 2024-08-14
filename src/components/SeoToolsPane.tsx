@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, PropsWithChildren, Suspense } from 'react';
 import { SeoToolsContext, SeoToolsContextValue } from '../context';
-import { SeoToolsPaneView } from './SeoToolsPaneView';
 import type { SanityDocument } from '@sanity/types';
 import { SeoToolsPaneEmptyView } from './SeoToolsPaneEmptyView';
 
-type Props = React.PropsWithChildren<{
+const SeoToolsPaneView = React.lazy(() => import('./SeoToolsPaneView'));
+
+type Props = PropsWithChildren<{
   options?: Partial<SeoToolsContextValue>;
   document?: {
     displayed?: SanityDocument;
@@ -25,7 +26,9 @@ export const SeoToolsPane: React.FC<Props> = ({ options, document }) => {
 
   return (
     <SeoToolsContext.Provider value={contextValue}>
-      {document?.displayed?._rev && <SeoToolsPaneView document={document?.displayed} />}
+      <Suspense fallback={<div>Loading...</div>}>
+        {document?.displayed?._rev && <SeoToolsPaneView document={document?.displayed} />}
+      </Suspense>
       {!document?.displayed?._rev && <SeoToolsPaneEmptyView />}
     </SeoToolsContext.Provider>
   );

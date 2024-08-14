@@ -1,11 +1,10 @@
 import React, { useCallback, useContext, useState } from 'react';
 import useSWR from 'swr';
-import YoastSEO from 'yoastseo';
 import SerpPreview from 'react-serp-preview';
 import { SeoToolsContext } from '../context';
 import { InvalidConfigurationError } from '../errors';
 import { extractErrorMessage, getYoastInsightsForContent, prepareRemoteData } from '../utils';
-import { Box, Card, Grid, Spinner, Stack, Tab, TabList, TabPanel, Text } from '@sanity/ui';
+import { Box, Card, Stack, Tab, TabList, TabPanel } from '@sanity/ui';
 import type { SanityDocument } from '@sanity/types';
 import { SeoToolsAnalyzingCard } from './SeoToolsAnalyzingCard';
 import { SeoToolsErrorCard } from './SeoToolsErrorCard';
@@ -16,7 +15,7 @@ type Props = {
   document: SanityDocument;
 };
 
-export const SeoToolsPaneView: React.FC<Props> = ({ document }) => {
+const SeoToolsPaneView: React.FC<Props> = ({ document }) => {
   const config = useContext(SeoToolsContext);
   const [currentTab, setCurrentTab] = useState(AssessmentCategory.SEO);
 
@@ -40,7 +39,7 @@ export const SeoToolsPaneView: React.FC<Props> = ({ document }) => {
           })
         : await config.prepare!(document);
 
-      const yoastInsights = getYoastInsightsForContent(YoastSEO, preparedData.content, {
+      const yoastInsights = await getYoastInsightsForContent(preparedData.content, {
         url: productionUrl.toString(),
         permalink: productionUrl.toString(),
         title: preparedData.title,
@@ -138,3 +137,5 @@ export const SeoToolsPaneView: React.FC<Props> = ({ document }) => {
     </Box>
   );
 };
+
+export default SeoToolsPaneView;

@@ -1,10 +1,10 @@
 {
   "name": "@operationnation/sanity-plugin-seo-tools-extended",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "license": "MIT",
   "main": "./lib/cjs",
   "module": "./lib/esm",
-  "types": "./types",
+  "types": "./lib/src",
   "author": {
     "name": "Operation Nation LLC",
     "email": "eric@operationnation.co",

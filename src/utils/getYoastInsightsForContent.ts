@@ -1,8 +1,8 @@
 import Jed from 'jed';
 import get from 'just-safe-get';
 import pixelWidth from 'string-pixel-width';
-import { AssessmentRating, AssessmentResult } from 'yoastseo';
-import yoastseoDefaultConfig from 'yoastseo/src/config/content/default.js';
+import { AssessmentRating, AssessmentResult } from '../utils/yoastseoTypes';
+import yoastseoDefaultConfig from '../constants/yoastseoDefault';
 import { AssessmentCategory } from '../constants';
 
 type Options = {
@@ -22,11 +22,8 @@ const AssessmentClassConfigKeyMap = {
   SentenceLengthInTextAssessment: 'sentenceLength'
 };
 
-export const getYoastInsightsForContent = (
-  YoastSEO: typeof import('yoastseo'),
-  html: string,
-  options: Options
-) => {
+export const getYoastInsightsForContent = async (html: string, options: Options) => {
+  const YoastSEO = (await import('yoastseo')).default;
   const paper = new YoastSEO.Paper(html, {
     keyword: options.keyword,
     url: options.url,

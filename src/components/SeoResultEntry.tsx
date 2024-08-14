@@ -1,7 +1,7 @@
 import { Box, Grid } from '@sanity/ui';
 import React from 'react';
 import styled from 'styled-components';
-import type { AssessmentRating, AssessmentResult } from 'yoastseo';
+import type { AssessmentRating, AssessmentResult } from '../utils/yoastseoTypes';
 import { SeoRatingBubble } from './SeoRatingBubble';
 
 type Props = {
