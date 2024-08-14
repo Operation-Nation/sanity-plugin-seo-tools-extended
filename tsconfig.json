@@ -6,7 +6,6 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -16,7 +15,9 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "outDir": "./lib",
-    "incremental": true
+    "incremental": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
   },
   "include": [".d.ts", "./src", "./.eslintrc.js"],
   "exclude": ["**/node_modules"]

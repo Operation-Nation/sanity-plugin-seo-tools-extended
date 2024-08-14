@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "./lib/cjs",
   "module": "./lib/esm",
-  "types": "./types",
+  "types": "./lib/src",
   "author": {
     "name": "Operation Nation LLC",
     "email": "eric@operationnation.co",
